@@ -1,0 +1,21 @@
+<div>
+  <table class="display-table">
+
+
+    <tr><td>Email </td><td><%= @user.email if @user.email.present? %></td></tr>
+
+    <tr><td>Status  </td><td><%= @user.status if @user.status.present? %></td></tr>
+    <!--
+	<tr><td>Phone No  </td><td><%#= @user.phone_no if @user.phone_no.present? %></td></tr>
+	<tr><td>Username </td><td><%#= @user.username if @user.username.present? %></td></tr>
+	<tr><td>Address </td><td><%#= @user.address if @user.address.present? %></td></tr>
+	<tr><td>Id No </td><td><%#= @user.id_no if @user.id_no.present? %></td></tr>
+	<tr><td>Blood Group </td><td><%#= @user.blood_group if @user.name.present? %></td></tr>
+	<tr><td>Ranking </td><td><%#= if @user.ranking.present? 
+									@user.ranking 
+								else 
+									0 
+								end %></td></tr>
+	-->
+  </table>
+</div>

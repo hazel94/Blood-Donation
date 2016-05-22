@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BloodDonationApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  
+</head>
+<body>
+	
+	
+
+	<h2 class="header"><center>Blood Donation</center></h2>
+
+	<div id="contentWrapper">
+	  	<div id="contentLeft">
+		    <ul id="leftNavigation">
+		    	<li><%= link_to "Home", users_homepage_path %><i class="fa leftNavIcon"></i></li>
+		    	<li><%= link_to "View All Blood Donors", users_blood_donors_path %><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "View Blood Friends", users_blood_friends_path %><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "View Donor Hospitals", users_donor_hospitals_path %><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "Change Your Status", users_change_status_path %><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "Notifications", users_notifications_path %><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "Blood Donation Centers", users_donation_centers_path %><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "Update Profile", edit_user_path(session[:user_id]) if session[:user_id]%><i class="fa leftNavIcon"></i></li>
+				<li><%= link_to "Invite a Friend !!", users_facebook_share_path %><i class="fa leftNavIcon"></li>
+			</ul>
+		</div>
+		  	
+		<div id="contentRight">
+
+		    <% flash.each do |key, value| %>
+  				<%= content_tag :div, value, class: "flash #{key}" %>
+			<% end %>
+			<% if current_user %>
+				Hi <%= current_user.name if session[:user_id] 
+						current_user.fbkuser_name if session[:fbkuser_id]%>
+				<div>
+					<% if session[:user_id] %>
+							<%= link_to "Log out",  session_path(current_user.id), method: :delete %>
+					<%else%>
+							<%= link_to "Log out",  signout_path %>
+					<% end %>
+				</div>
+			<% end %>
+			<br /><br />
+			<%= yield %>
+
+      	</div>
+	</div>
+	
+	
+
+</body>
+</html>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/object/VerticalNavigation.min.js"></script>

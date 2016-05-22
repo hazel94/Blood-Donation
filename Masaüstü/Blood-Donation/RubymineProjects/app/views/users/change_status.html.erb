@@ -1,0 +1,9 @@
+<h3>Change Status</h3>
+<%= form_for :facebook_user, url: change_status_path do |f| %>
+	<%= f.radio_button :status, "Available" %>
+	<%= f.label :Status, "Available" %><br /><br />
+	<%= f.radio_button :status, "Busy" %>
+	<%= f.label :Status, "Busy" %>	
+	<br /><br />
+	<%= f.submit "Change" %>
+<% end %>

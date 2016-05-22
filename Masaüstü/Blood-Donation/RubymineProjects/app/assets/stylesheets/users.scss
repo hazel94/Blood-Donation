@@ -1,0 +1,52 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{
+    background: yellow;
+    width:100%;
+    padding:10px;
+}
+
+.block-pointer {
+    padding: 10px;
+    display:block;
+}
+.emergency{
+	color:red;
+}
+
+.link-box {
+    display: block;
+    color: #ffffff;
+    background-color: #19FFD1;
+    width: 120px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+.index-body{
+	position:absolute;
+	top:10%;
+	left:30%;
+}
+
+.display-table{
+    border:1px solid gray;
+}
+
+.display-table tr{
+    border:1px solid gray;
+    width:150px;
+}
+
+.display-table td{
+    border:1px solid gray;
+    width: 150px;
+    padding:5px;
+}
+
+.table{
+    border:1px solid gray;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BloodDonationApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user %>
+	Hi <%= current_user.name %>
+	<%= @path=sessions_destroy_path if session[:user_id] %>
+	<%= @path=signout_path if session[:fbkuser_id] %>
+	<%= link_to "Log out",  @path %>
+<% end %>
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

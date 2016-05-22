@@ -1,0 +1,25 @@
+<h2><center>LogIn</center></h2>
+<div>
+  <%= form_for :User, url: session_index_path do |f| %>
+   
+    <p>
+      <%= f.label :Username %><br />
+      <%= f.text_field :username %>
+    </p>
+    
+
+    <p>
+      <%= f.label :Password %><br />
+      <%= f.password_field :password %>
+    </p>
+    
+    <br />
+    <p>
+      <%= f.submit "Log In" %>
+    </p>
+   
+  <% end %>
+
+</div>
+<h3>OR</h3><br />
+<%= link_to "Sign in with Facebook", "/auth/facebook", id: "Sign_in" %>
